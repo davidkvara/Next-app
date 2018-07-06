@@ -4,9 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "node server.js",
-    "start": "set NODE_ENV=production node server.js",
-    "build": "next build"
+    "dev": "next",
+    "start": "set NODE_ENV=production&&node server.js",
+    "build": "next build",
+    "heroku-postbuild": "yarn && yarn build"
   },
   "keywords": [],
   "author": "",
