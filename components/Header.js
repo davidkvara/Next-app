@@ -1,18 +1,23 @@
 import Link from "next/link";
 
 const linkStyle = {
-  marginRight: 15
+  marginRight: "1.1rem",
+  color: "#000",
+  borderBottom: "3px solid #222",
+  fontWeight: 500
 };
 
 const Header = () => (
-  <div>
-    <Link prefetch href="/">
-      <a style={linkStyle}>Home</a>
-    </Link>
-    <Link prefetch href="/about">
-      <a style={linkStyle}>About</a>
-    </Link>
-  </div>
+  <header>
+    <nav>
+      <Link prefetch href="/">
+        <a style={linkStyle}>Home</a>
+      </Link>
+      <Link prefetch href="/about">
+        <a style={linkStyle}>About</a>
+      </Link>
+    </nav>
+  </header>
 );
 
 export default Header;

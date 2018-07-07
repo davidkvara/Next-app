@@ -1,21 +1,34 @@
 import Layout from "../components/MyLayout.js";
 import Link from "next/link";
+import Head from "next/head";
 import fetch from "isomorphic-unfetch";
 
 const Index = props => (
   <Layout>
-    <h1>Batman TV Shows</h1>
+    <Head>
+      <title>Welcome to ssr React App</title>
+    </Head>
+    <h1 className="title">Batman TV Shows</h1>
     <ul>
-      {props.shows.map(({ show }) => {
-        return (
-          <li key={show.id}>
-            <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
-              <a>{show.name}</a>
-            </Link>
-          </li>
-        );
-      })}
+      {props.shows.map(({ show }) => (
+        <li key={show.id} style={{ marginBottom: 4 }}>
+          <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
+            <a>{show.name}</a>
+          </Link>
+        </li>
+      ))}
     </ul>
+    <style jsx>{`
+      .title {
+        font-size: 1.9rem;
+      }
+      @media screen and (max-width: 48rem) {
+        .title {
+          font-size: 1.6rem;
+          line-height: 1.2;
+        }
+      }
+    `}</style>
   </Layout>
 );
 
@@ -23,11 +36,7 @@ Index.getInitialProps = async function() {
   const res = await fetch("https://api.tvmaze.com/search/shows?q=batman");
   const data = await res.json();
 
-  // console.log(`Show data fetched. Count: ${data.length}`);
-
-  return {
-    shows: data
-  };
+  return { shows: data };
 };
 
 export default Index;
