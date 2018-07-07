@@ -28,6 +28,12 @@ const Header = () => (
       .nav-link:hover {
         color: #555;
       }
+
+      @media screen and (max-width: 48rem) {
+        .header {
+          padding: 0.8rem 1rem;
+        }
+      }
     `}</style>
   </header>
 );

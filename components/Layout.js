@@ -53,13 +53,13 @@ const Layout = props => (
       @media screen and (max-width: 48rem) {
         .app {
           margin: 0;
-          height: 100vh;
+          min-height: 100vh;
           box-shadow: none;
           border-radius: 0;
         }
 
         .main {
-          padding: 1rem;
+          padding: 0 1rem;
         }
       }
     `}</style>
