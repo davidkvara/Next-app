@@ -1,4 +1,4 @@
-import Layout from "../components/MyLayout.js";
+import Layout from "../components/Layout.js";
 import Head from "next/head";
 import fetch from "isomorphic-unfetch";
 
@@ -8,7 +8,9 @@ const Post = props => (
       <title>{props.show.name}</title>
     </Head>
     <div className="wrapper">
-      <img src={props.show.image.medium} />
+      <div className="cover">
+        <img src={props.show.image.medium} />
+      </div>
       <div className="info">
         <h1 className="show-title">{props.show.name}</h1>
         <p>{props.show.summary.replace(/<[/]?[pb]>/g, "")}</p>
@@ -27,6 +29,7 @@ const Post = props => (
 
       .show-title {
         margin: 0;
+        font-size: 1.7rem;
       }
 
       @media screen and (max-width: 48rem) {
@@ -37,7 +40,7 @@ const Post = props => (
         .show-title {
           line-height: 1.2;
           margin-top: 1rem;
-          font-size: 1.6rem;
+          font-size: 1.55rem;
         }
 
         .info {

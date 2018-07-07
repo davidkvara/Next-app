@@ -1,4 +1,4 @@
-import Layout from "../components/MyLayout.js";
+import Layout from "../components/Layout.js";
 import Link from "next/link";
 import Head from "next/head";
 import fetch from "isomorphic-unfetch";
@@ -20,11 +20,11 @@ const Index = props => (
     </ul>
     <style jsx>{`
       .title {
-        font-size: 1.9rem;
+        font-size: 1.75rem;
       }
       @media screen and (max-width: 48rem) {
         .title {
-          font-size: 1.6rem;
+          font-size: 1.5rem;
           line-height: 1.2;
         }
       }

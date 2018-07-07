@@ -1,4 +1,4 @@
-import Layout from "../components/MyLayout.js";
+import Layout from "../components/Layout.js";
 import Head from "next/head";
 
 export default () => (
@@ -7,5 +7,6 @@ export default () => (
       <title>About ssr React App</title>
     </Head>
     <p>This is the about page</p>
+    <p>სალამი!</p>
   </Layout>
 );
