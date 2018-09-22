@@ -1,17 +1,13 @@
 {
-  "name": "hello-next",
+  "//deploying": "//https://nextjs.org/learn/basics/deploying-a-nextjs-app/deploy-with-a-custom-server",
+  "name": "next-demo",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "private": true,
   "scripts": {
     "dev": "next",
-    "start": "set NODE_ENV=production&&node server.js",
-    "build": "next build",
-    "heroku-postbuild": "yarn && yarn build"
+    "start": "NODE_ENV=production node server.js",
+    "build": "next build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "compression": "^1.7.2",
     "express": "^4.16.3",
